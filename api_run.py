@@ -12,6 +12,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"])
 
+
 def api(func) -> APIRouter:
     method_name = func.__name__
     path = f"/{method_name}"
@@ -28,8 +29,10 @@ def api(func) -> APIRouter:
 
 if __name__ == "__main__":
     from api_calculate import calculate as m1
+
     app.include_router(m1)
     from api_text import text_api as m2
-    app.include_router(m2)
-    uvicorn.run(app, host="130.185.76.65", port=8000)
 
+    app.include_router(m2)
+    b = 0
+    uvicorn.run(app, host="130.185.76.65", port=8000)
