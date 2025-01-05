@@ -32,3 +32,4 @@ if __name__ == "__main__":
     from api_text import text_api as m2
     app.include_router(m2)
     uvicorn.run(app, host="130.185.76.65", port=8000)
+
